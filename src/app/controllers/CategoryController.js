@@ -3,7 +3,7 @@ const CategoriesRepository = require('../repositories/CategoriesRepository')
 class CategoryController {
 	async index(request, response) {
 		const categories = await CategoriesRepository.findAll()
-		response.status(200).json({ categories })
+		response.status(200).json(categories)
 	}
 
 	async store(request, response) {
@@ -16,7 +16,7 @@ class CategoryController {
 		}
 
 		const category = await CategoriesRepository.create({ name })
-		response.status(201).json({ category })
+		response.status(201).json(category)
 	}
 
 	async show(request, response) {
